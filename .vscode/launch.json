@@ -1,0 +1,51 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "API - Logs Microservice",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "app.main",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "name": "Worker - Logs Processor",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "app.worker",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "name": "Test API",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/test_api.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "name": "🚀 Complete Microservice",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/run_complete.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ],
+    "compounds": [
+        {
+            "name": "🚀 Logs Microservice (API + Worker)",
+            "configurations": [
+                "API - Logs Microservice",
+                "Worker - Logs Processor"
+            ],
+            "stopAll": true
+        }
+    ]
+}

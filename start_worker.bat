@@ -1,0 +1,3 @@
+@echo off
+echo 🔄 Iniciando Worker de logs...
+python worker.py
